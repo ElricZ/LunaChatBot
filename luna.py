@@ -49,30 +49,6 @@ async def type_and_send(message):
     await message.reply_text(response)
     await message._client.send_chat_action(chat_id, "cancel")
 
-
-@luna.on_message(filters.command("repo") & ~filters.edited)
-async def repo(_, message):
-    await message.reply_text(
-        "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
-        + " | [Group](t.me/PatheticProgrammers)",
-        disable_web_page_preview=True,
-    )
-
-
-@luna.on_message(filters.command("help") & ~filters.edited)
-async def start(_, message):
-    await luna.send_chat_action(message.chat.id, "typing")
-    await sleep(2)
-    await message.reply_text("/repo - Get Repo Link")
-
-
-@luna.on_message(
-    ~filters.private
-    & filters.text
-    & ~filters.command("help")
-    & ~filters.edited,
-    group=69,
-)
 async def chat(_, message):
     if message.reply_to_message:
         if not message.reply_to_message.from_user:
