@@ -82,7 +82,7 @@ async def chat(_, message):
             return
     else:
         match = re.search(
-            "[.|\n]{0,}luna[.|\n]{0,}",
+            "[.|\n]{0,}stacy[.|\n]{0,}",
             message.text.strip(),
             flags=re.IGNORECASE,
         )
@@ -109,7 +109,7 @@ async def main():
     print(
         """
 -----------------
-| Luna Started! |
+| Stacy Started! |
 -----------------
 """
     )
